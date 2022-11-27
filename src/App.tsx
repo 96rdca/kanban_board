@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+/** @jsxImportSource @emotion/react */
+
+import { css } from '@emotion/react';
 import './App.css';
+import Column from './components/Column';
+import { ColumnType } from './utils/enums';
+import React from 'react';
+
+const mainCSS = {
+  header: css({
+    //  padding: '1 rem'
+  }),
+  divColumns: css({
+    columns: 3,
+    padding: '1rem',
+  })
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header css={mainCSS.header}>
+        <h1>Kanan Board</h1>
       </header>
+      <div css={mainCSS.divColumns}>
+        <Column column={ColumnType.TODO}></Column>
+        <Column column={ColumnType.IN_PROGRESS}></Column>
+        <Column column={ColumnType.COMPLETED}></Column>
+      </div>
     </div>
   );
 }
