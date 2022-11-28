@@ -43,7 +43,8 @@ const mainCSS = {
   app: css({
     textAlign: 'center',
     backgroundColor: '#6699CC',
-    minHeight: '100vh'
+    minHeight: '100vh',
+    minWidth: '100vw'
   }),
   header: css({
     backgroundColor: '#6699CC',
