@@ -3,9 +3,3 @@ export enum ColumnType{
     IN_PROGRESS = 'In Progress',
     COMPLETED = 'Completed',
 }
-
-export enum Tag{
-    SEO = 'SEO',
-    LONG_FORM = 'Long Form',
-    BLOG_POST = 'Blog Post'
-}

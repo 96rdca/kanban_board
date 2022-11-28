@@ -1,12 +1,11 @@
-import { ColumnType, Tag  } from "./enums";
+import { ColumnType  } from "./enums";
 
 export interface CardModel{
     id: string;
     title: string;
     description: string;
-    tag: Tag,
     assignee: string;
-    due_date: Date;
+    due_date: string;
     column: ColumnType;
     color: string;
 }
