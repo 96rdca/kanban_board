@@ -171,7 +171,7 @@ function App() {
         </DragDropContext>
       </div>
       <footer css={mainCSS.footer}>
-        <p>Made by Richard C.</p>
+        <p>App created by Richard C.</p>
       </footer>
     </div>
   );

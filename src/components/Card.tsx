@@ -14,10 +14,10 @@ type CardProps = {
 
 const cssStyle = {
     header: css({
-        // display: 'flex',
-        // justifyContent: 'space-around',
-        // justifyItems: 'stretch',
-        // flex: 1,
+        display: 'flex',
+        justifyContent: 'space-around',
+        justifyItems: 'stretch',
+        flex: 1,
         fontSize: '16px',
         lineHeight: '1.5',
         paddingBottom: '5px'
@@ -25,9 +25,9 @@ const cssStyle = {
     description: css({
         fontSize: '14px',
         lineHeight: '1.5',
-        // display: 'block',
-        // textAlign: 'justify',
-        // justifyItems: 'stretch',
+        display: 'block',
+        textAlign: 'justify',
+        justifyItems: 'stretch',
         marginBottom: '5px',
     }),
     card: css({
