@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react';
 import { DragDropContext, DropResult } from 'react-beautiful-dnd';
 import uuid from 'react-uuid';
 import Column from './components/Column';
-import { Spinner } from './components/Spinner';
 import { ColumnType } from './utils/enums';
 import { CardModel } from './utils/models';
 
@@ -42,27 +41,48 @@ const FETCHING_DELAY_MILISECONDS = 5000;
 const mainCSS = {
   app: css({
     textAlign: 'center',
-    backgroundColor: '#6699CC',
+    display: 'flex',
+    flexDirection:'column',
     minHeight: '100vh',
     minWidth: '100vw'
   }),
   header: css({
-    backgroundColor: '#6699CC',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // display: 'flex',
+    // flexDirection: 'column',
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    padding: '15px',
+    marginBottom: '10px',
     fontSize: 'calc(10px + 1vmin)',
-    color: 'white',
+    color: '#333',
+    backgroundColor: '#ADD8E6'
+  }),
+  footer: css({
+    backgroundColor: '#f5f5f5',
+    color: '#333',
+    fontSize: '14px',
+    padding: '15px',
+    textAlign: 'left',
+    marginTop: 'auto'
   }),
   divColumns: css({
     display: 'flex',
-    columns: 3,
-    padding: '1rem',
-    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    // columns: 3,
+    // flex: 1,
     // backgroundColor: '#c1d5e0'
   }),
-  divColum: css({ flex: 1 })
+  divColum: css({
+    backgroundColor: 'f9f9f9',
+    borderRadius: '4px',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+    flex: 1,
+    margin: '0 10px',
+    padding: '10px'
+   }),
+
 }
 
 function App() {
@@ -134,8 +154,8 @@ function App() {
     setCards(newList);
   };
 
-  if (isFetching)
-    return (<Spinner />);
+  // if (isFetching)
+  //   return (<SkeletonCard />);
 
   return (
     <div css={mainCSS.app}>
@@ -145,11 +165,14 @@ function App() {
       <div css={mainCSS.divColumns}>
         <DragDropContext onDragEnd={onDragEnd}>
           {columns.map((_: any, key: any) =>
-            <div css={mainCSS.divColum}>
-              <Column cards={cards} column={Object.values(ColumnType)[key]} handleSubmit={handleSubmit} handleDelete={handleDelete} />
+            <div css={mainCSS.divColum} key={key}>
+              <Column isLoading={isFetching} cards={cards} key={key} column={Object.values(ColumnType)[key]} handleSubmit={handleSubmit} handleDelete={handleDelete} />
             </div>)}
         </DragDropContext>
       </div>
+      <footer css={mainCSS.footer}>
+        <p>Made by Richard C.</p>
+      </footer>
     </div>
   );
 }

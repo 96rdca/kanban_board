@@ -14,27 +14,32 @@ type CardProps = {
 
 const cssStyle = {
     header: css({
-        display: 'flex',
-        justifyContent: 'space-around',
-        justifyItems: 'stretch',
-        flex: 1,
-        paddingBottom: '10px'
+        // display: 'flex',
+        // justifyContent: 'space-around',
+        // justifyItems: 'stretch',
+        // flex: 1,
+        fontSize: '16px',
+        lineHeight: '1.5',
+        paddingBottom: '5px'
     }),
     description: css({
-        display: 'block',
-        textAlign: 'justify',
-        justifyItems: 'stretch',
-        marginBottom: '2rem',
+        fontSize: '14px',
+        lineHeight: '1.5',
+        // display: 'block',
+        // textAlign: 'justify',
+        // justifyItems: 'stretch',
+        marginBottom: '5px',
     }),
     card: css({
-        boxShadow: '0 4px 8px 0 rgba(0,0,0,0.3)',
-        transition: '0.3s',
-        borderRadius: '1rem',
-        marginTop: '5px',
-        padding: '2px 16px',
-        margin: '5px',
+        boxShadow: '0 2px 4px 0 rgba(0,0,0,0.1)',
+        transition: 'background-color 0.3s ease',
+        borderRadius: '4px',
+        marginBottom: '10px',
+        padding: '10px',
+        // margin: '5px',
         '&:hover': {
-            boxShadow: '0 10px 20px 0 rgba(0,0,0,0.5)'
+            backgroundColor: 'f5f5f5',
+            // boxShadow: '0 10px 20px 0 rgba(0,0,0,0.5)'
         }
     }),
     rowAction: css({
